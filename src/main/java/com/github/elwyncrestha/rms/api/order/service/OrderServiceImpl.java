@@ -34,4 +34,9 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getAll() {
         return repository.findAll();
     }
+
+    @Override
+    public List<Order> getAllUnpaid() {
+        return repository.findUnpaidOrders();
+    }
 }

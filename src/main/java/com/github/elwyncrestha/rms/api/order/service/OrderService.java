@@ -1,5 +1,7 @@
 package com.github.elwyncrestha.rms.api.order.service;
 
+import java.util.List;
+
 import com.github.elwyncrestha.rms.api.order.entity.Order;
 import com.github.elwyncrestha.rms.core.service.BaseService;
 
@@ -8,4 +10,5 @@ import com.github.elwyncrestha.rms.core.service.BaseService;
  */
 public interface OrderService extends BaseService<Order, Long> {
 
+    List<Order> getAllUnpaid();
 }
