@@ -15,4 +15,6 @@ public interface OrderService extends BaseService<Order, Long> {
 
     List<Order> findOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
 
+    long countOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
+
 }

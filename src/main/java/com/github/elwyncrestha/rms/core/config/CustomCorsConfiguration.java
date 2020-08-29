@@ -1,4 +1,4 @@
-package com.github.elwyncrestha.rms.web.config;
+package com.github.elwyncrestha.rms.core.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

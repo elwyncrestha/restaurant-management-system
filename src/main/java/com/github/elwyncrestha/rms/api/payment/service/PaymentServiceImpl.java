@@ -42,4 +42,9 @@ public class PaymentServiceImpl implements PaymentService {
         ZonedDateTime end) {
         return repository.findPaymentsByPaymentDateTimeBetween(start, end);
     }
+
+    @Override
+    public long countPaymentsByPaymentDateTimeBetween(ZonedDateTime start, ZonedDateTime end) {
+        return repository.countPaymentsByPaymentDateTimeBetween(start, end);
+    }
 }

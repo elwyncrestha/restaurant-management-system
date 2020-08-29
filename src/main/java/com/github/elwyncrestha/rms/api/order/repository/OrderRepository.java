@@ -19,4 +19,6 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findUnpaidOrders();
 
     List<Order> findOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
+
+    long countOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
 }

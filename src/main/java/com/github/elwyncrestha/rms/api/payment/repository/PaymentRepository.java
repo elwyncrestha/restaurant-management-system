@@ -15,4 +15,6 @@ import com.github.elwyncrestha.rms.api.payment.entity.Payment;
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
     List<Payment> findPaymentsByPaymentDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
+
+    long countPaymentsByPaymentDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
 }

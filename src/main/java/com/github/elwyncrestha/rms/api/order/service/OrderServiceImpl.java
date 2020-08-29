@@ -45,4 +45,9 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> findOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end) {
         return repository.findOrdersByOrderDateTimeBetween(start, end);
     }
+
+    @Override
+    public long countOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end) {
+        return repository.countOrdersByOrderDateTimeBetween(start, end);
+    }
 }

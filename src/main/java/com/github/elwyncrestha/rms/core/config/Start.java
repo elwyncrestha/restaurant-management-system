@@ -1,4 +1,4 @@
-package com.github.elwyncrestha.rms.web.config;
+package com.github.elwyncrestha.rms.core.config;
 
 import java.io.File;
 import javax.annotation.PostConstruct;

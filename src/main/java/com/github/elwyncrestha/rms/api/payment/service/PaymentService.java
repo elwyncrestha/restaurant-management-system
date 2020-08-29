@@ -12,4 +12,7 @@ import com.github.elwyncrestha.rms.core.service.BaseService;
 public interface PaymentService extends BaseService<Payment, Long> {
 
     List<Payment> findPaymentsByPaymentDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
+
+    long countPaymentsByPaymentDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
+
 }
