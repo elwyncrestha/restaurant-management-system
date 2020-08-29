@@ -1,5 +1,6 @@
 package com.github.elwyncrestha.rms.api.order.repository;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +17,6 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     @Query("select o from Order o where o.id not in (select distinct p.order.id from Payment p)")
     List<Order> findUnpaidOrders();
+
+    List<Order> findOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
 }

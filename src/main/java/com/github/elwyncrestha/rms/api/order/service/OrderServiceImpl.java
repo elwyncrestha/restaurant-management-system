@@ -1,5 +1,6 @@
 package com.github.elwyncrestha.rms.api.order.service;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -38,5 +39,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> getAllUnpaid() {
         return repository.findUnpaidOrders();
+    }
+
+    @Override
+    public List<Order> findOrdersByOrderDateTimeBetween(ZonedDateTime start, ZonedDateTime end) {
+        return repository.findOrdersByOrderDateTimeBetween(start, end);
     }
 }

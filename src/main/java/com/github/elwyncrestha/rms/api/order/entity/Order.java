@@ -1,8 +1,7 @@
 package com.github.elwyncrestha.rms.api.order.entity;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
@@ -33,7 +32,7 @@ public class Order extends AbstractPersistable<Long> {
     private User user;
 
     @Column(updatable = false)
-    private LocalDateTime orderDateTime;
+    private ZonedDateTime orderDateTime;
 
     @ManyToMany
     private List<FoodItem> items;

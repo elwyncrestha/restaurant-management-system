@@ -1,5 +1,6 @@
 package com.github.elwyncrestha.rms.api.payment.entity;
 
+import java.time.ZonedDateTime;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -24,6 +25,7 @@ public class Payment extends AbstractPersistable<Long> {
     @OneToOne
     private Order order;
 
+    private ZonedDateTime paymentDateTime;
     private float paidAmount;
     private float returnedAmount;
 

@@ -1,5 +1,6 @@
 package com.github.elwyncrestha.rms.api.payment.service;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -34,5 +35,11 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public List<Payment> getAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<Payment> findPaymentsByPaymentDateTimeBetween(ZonedDateTime start,
+        ZonedDateTime end) {
+        return repository.findPaymentsByPaymentDateTimeBetween(start, end);
     }
 }

@@ -1,5 +1,7 @@
 package com.github.elwyncrestha.rms.web.order;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.elwyncrestha.rms.api.order.entity.Order;
 import com.github.elwyncrestha.rms.api.order.service.OrderService;
+import com.github.elwyncrestha.rms.web.dto.DateRangeDto;
 
 /**
  * @author Elvin Shrestha on 8/28/2020
@@ -37,5 +40,12 @@ public class OrderController {
     @GetMapping("/unpaid")
     public ResponseEntity<?> getAllUnpaid() {
         return ResponseEntity.ok(service.getAllUnpaid());
+    }
+
+    @PostMapping("/orderDateTime/between")
+    public ResponseEntity<?> getOrdersBetween(@RequestBody DateRangeDto range) {
+        List<Order> orders = service
+            .findOrdersByOrderDateTimeBetween(range.getStart(), range.getEnd());
+        return ResponseEntity.ok(orders);
     }
 }

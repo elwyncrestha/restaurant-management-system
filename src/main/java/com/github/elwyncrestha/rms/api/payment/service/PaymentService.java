@@ -1,5 +1,8 @@
 package com.github.elwyncrestha.rms.api.payment.service;
 
+import java.time.ZonedDateTime;
+import java.util.List;
+
 import com.github.elwyncrestha.rms.api.payment.entity.Payment;
 import com.github.elwyncrestha.rms.core.service.BaseService;
 
@@ -8,4 +11,5 @@ import com.github.elwyncrestha.rms.core.service.BaseService;
  */
 public interface PaymentService extends BaseService<Payment, Long> {
 
+    List<Payment> findPaymentsByPaymentDateTimeBetween(ZonedDateTime start, ZonedDateTime end);
 }
