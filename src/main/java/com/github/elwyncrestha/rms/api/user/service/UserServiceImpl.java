@@ -2,6 +2,9 @@ package com.github.elwyncrestha.rms.api.user.service;
 
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.github.elwyncrestha.rms.api.user.entity.User;
@@ -33,5 +36,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public User getAuthenticated() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication.getPrincipal() instanceof String) {
+            return repository.findUserByUsername(authentication.getPrincipal().toString());
+        } else {
+            throw new UsernameNotFoundException(
+                "User is not authenticated; Found " + " of type " + authentication.getPrincipal()
+                    .getClass() + "; Expected type User");
+        }
     }
 }

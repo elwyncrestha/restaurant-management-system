@@ -21,7 +21,7 @@ import com.github.elwyncrestha.rms.web.dto.OrderPaymentCountDto;
 @RequestMapping(ChartController.URL)
 public class ChartController {
 
-    static final String URL = "/charts";
+    static final String URL = "/api/charts";
     private final OrderService orderService;
     private final PaymentService paymentService;
 

@@ -11,4 +11,5 @@ import com.github.elwyncrestha.rms.api.user.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    User findUserByUsername(String username);
 }

@@ -8,4 +8,6 @@ import com.github.elwyncrestha.rms.core.service.BaseService;
  */
 public interface UserService extends BaseService<User, Long> {
 
+    User getAuthenticated();
+
 }

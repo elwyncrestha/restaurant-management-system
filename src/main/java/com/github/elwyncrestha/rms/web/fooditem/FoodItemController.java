@@ -14,7 +14,7 @@ import com.github.elwyncrestha.rms.api.fooditem.service.FoodItemService;
 @RequestMapping(FoodItemController.URL)
 public class FoodItemController {
 
-    static final String URL = "/food-items";
+    static final String URL = "/api/food-items";
     private final FoodItemService service;
 
     public FoodItemController(

@@ -20,7 +20,7 @@ import com.github.elwyncrestha.rms.web.dto.DateRangeDto;
 @RequestMapping(OrderController.URL)
 public class OrderController {
 
-    static final String URL = "/orders";
+    static final String URL = "/api/orders";
     private final OrderService service;
 
     public OrderController(OrderService service) {

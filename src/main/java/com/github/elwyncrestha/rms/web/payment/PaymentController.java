@@ -19,7 +19,7 @@ import com.github.elwyncrestha.rms.web.dto.DateRangeDto;
 @RequestMapping(PaymentController.URL)
 public class PaymentController {
 
-    static final String URL = "/payments";
+    static final String URL = "/api/payments";
     private final PaymentService service;
 
     public PaymentController(PaymentService service) {
