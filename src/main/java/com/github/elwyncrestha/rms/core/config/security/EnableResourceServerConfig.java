@@ -27,14 +27,11 @@ public class EnableResourceServerConfig extends ResourceServerConfigurerAdapter 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
-            .headers(c -> c.frameOptions().sameOrigin())
+            .headers(c -> c.frameOptions().sameOrigin())    // for h2 console frames
             .authorizeRequests()
             .antMatchers("/oauth/token")
             .permitAll()
             .antMatchers("/api/**")
-            .authenticated()
-            .and()
-            .logout()
-            .logoutRequestMatcher(new AntPathRequestMatcher("/oauth/logout"));
+            .authenticated();
     }
 }
